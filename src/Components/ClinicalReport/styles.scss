@@ -1,13 +1,15 @@
+@import "../../index.scss";
+
 .clinical-report-wrapper {
   margin: 0;
-  background-color: rgb(223, 231, 255);
+  background-color: $skyBlue;
   padding: 0 0 2rem;
   height: auto;
   width: 100%;
   position: relative;
 
   h6 {
-    color: rgb(69, 78, 202);
+    color: $darkBlue;
     padding: 3rem 0 1rem;
     text-align: center;
     font-size: 16px;
@@ -15,7 +17,7 @@
 
   img {
     position: absolute;
-    width: 80px;
+    width: 60px;
     height: auto;
     top: 0;
     right: 0;

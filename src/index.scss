@@ -1,6 +1,7 @@
-$primary-color: rgb(8, 8, 112);
-$secondary-color: rgb(15, 153, 123);
-
+$primary-color: #2c2e83;
+$secondary-color: #00a4a0;
+$darkBlue: #0971ce;
+$skyBlue: #e6f1fa;
 body {
   padding: 0 1rem;
   margin: 0;
@@ -20,13 +21,13 @@ code {
 ::-webkit-scrollbar {
   margin-left: 20px;
   width: 15px;
-  background-color: rgb(227, 228, 233);
+  background-color: $skyBlue;
   border-left: 4px white solid;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(105, 105, 189);
+  background: $darkBlue;
   // border-radius: 10px;
   border-left: 4px white solid;
   background-clip: padding-box;

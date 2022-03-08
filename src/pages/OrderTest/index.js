@@ -12,22 +12,13 @@ export default function OrderTest() {
           <div className="order-card">
             <div className="content-wrapper">
               <h4>Blood Smear</h4>
-              <img
-                src={
-                  "https://icon-library.com/images/play-icon-png/play-icon-png-6.jpg"
-                }
-                alt="play icon"
-                className="selection-img"
-              />
             </div>
           </div>
           <div className="order-card active">
             <div className="content-wrapper">
               <h4>ADAMST13 Activity and Antibody</h4>
               <img
-                src={
-                  "https://icon-library.com/images/play-icon-png/play-icon-png-6.jpg"
-                }
+                src={"/greenCheck.png"}
                 alt="play icon"
                 className="selection-img"
               />
@@ -36,13 +27,6 @@ export default function OrderTest() {
           <div className="order-card">
             <div className="content-wrapper">
               <h4>Direct Antigobulin</h4>
-              <img
-                src={
-                  "https://icon-library.com/images/play-icon-png/play-icon-png-6.jpg"
-                }
-                alt="play icon"
-                className="selection-img"
-              />
             </div>
           </div>
         </div>

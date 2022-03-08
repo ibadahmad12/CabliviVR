@@ -7,6 +7,36 @@
   border-radius: 16px;
   background-color: rgb(102, 102, 102);
 
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    color: white;
+
+    h6 {
+      position: relative;
+    }
+
+    h6::before,
+    h6::after,
+    h5::before,
+    h5::after {
+      margin: 0;
+      content: "";
+      padding: 0 10px;
+      display: inline-block;
+      width: 50px;
+      height: 1px;
+      background: #ffffff;
+      margin-bottom: 3px;
+    }
+
+    h5::before,
+    h5::after {
+      width: 140px;
+    }
+  }
+
   h2 {
     margin: 1rem 0 1rem;
     padding-top: 8px;
@@ -27,7 +57,7 @@
     border-radius: 15px;
     flex: 0 1 190px;
     height: 130px;
-    margin: 15px 10px;
+    margin: 10px 10px;
     border: 2px solid rgb(255, 255, 255);
     background-color: rgb(63, 61, 61);
 
@@ -63,6 +93,16 @@
 
     h4 {
       color: $secondary-color !important;
+    }
+  }
+
+  @media (max-width: 1160px) {
+    .treatment-card:nth-child(1) {
+      margin-right: 10px;
+    }
+    h6,
+    h5 {
+      display: none;
     }
   }
 }

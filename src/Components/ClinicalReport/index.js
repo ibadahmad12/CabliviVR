@@ -2,14 +2,11 @@ import React from "react";
 import "./styles.scss";
 
 export default function ClinicalReport() {
-  const PATH =
-    "https://www.adobe.com/content/dam/cc/us/en/creativecloud/design/discover/mascot-logo-design/mascot-logo-design_fb-img_1200x800.jpg";
-
   return (
     <div className="clinical-report-wrapper">
       <div>
         <h6>Clinical Laboratary Report </h6>
-        <img src={PATH} alt="logo" />
+        <img src={"/reportLogo.png"} alt="logo" />
       </div>
 
       <div className="clinic-info">

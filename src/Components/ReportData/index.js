@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import "./styles.scss";
 
 const data = [
@@ -40,12 +39,7 @@ export default function ReportData() {
             className={`report-items-container ${index % 2 === 0 && "active"} `}
             key={row[3]}
           >
-            <img
-              src={
-                "https://media.istockphoto.com/vectors/green-checkmark-vector-illustration-vector-id1133442802?k=20&m=1133442802&s=612x612&w=0&h=N3UvaUREpqMYVpOV7kUrQzgpVaCgddEi-LESGeAl_FI="
-              }
-              alt=" select img"
-            />
+            <img src={"/reportCheck.png"} alt=" select img" />
             <div className={`report-item`}>
               {row.map((column) => {
                 return <p>{column}</p>;
