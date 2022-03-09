@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles.scss";
 
-export default function ClinicalReport() {
+const ClinicalReport = () => {
   return (
     <div className="clinical-report-wrapper">
       <div>
         <h6>Clinical Laboratary Report </h6>
-        <img src={"/reportLogo.png"} alt="logo" />
+        <img src="/reportLogo.png" alt="logo" />
       </div>
 
       <div className="clinic-info">
@@ -26,4 +26,6 @@ export default function ClinicalReport() {
       </div>
     </div>
   );
-}
+};
+
+export default ClinicalReport;

@@ -1,15 +1,21 @@
 import React from "react";
 import ClinicalReport from "../../Components/ClinicalReport";
 import ReportData from "../../Components/ReportData";
+import RootLayout from "../../Layouts/RootLayout";
 import TabLayout from "../../Layouts/TabLayout";
+import "./styles.scss";
 
-export default function PatientReport() {
+const PatientReport = () => {
   return (
-    <TabLayout>
-      <div style={{ maxHeight: "550px", overflowY: "scroll" }}>
-        <ClinicalReport />
-        <ReportData />
-      </div>
-    </TabLayout>
+    <RootLayout>
+      <TabLayout>
+        <div className="table-wrapper">
+          <ClinicalReport />
+          <ReportData />
+        </div>
+      </TabLayout>
+    </RootLayout>
   );
-}
+};
+
+export default PatientReport;

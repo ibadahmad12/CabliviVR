@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 
-export default function List() {
+const List = () => {
   var heading = ["Headset", "Date", "Time", "Action"];
   var body = [
     ["4347", "4/12/2022", "14:23", "View"],
@@ -38,9 +38,11 @@ export default function List() {
       </div>
     </div>
   );
-}
+};
 
-function TableRow({ row }) {
+export default List;
+
+const TableRow = ({ row }) => {
   const navigate = useNavigate();
 
   const headsetSearch = () => {
@@ -56,4 +58,4 @@ function TableRow({ row }) {
       ))}
     </div>
   );
-}
+};

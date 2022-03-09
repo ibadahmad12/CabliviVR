@@ -24,7 +24,7 @@ const data = [
   ["HEMOGLOBIN", "12.0", "L", "1500 to 400 * 10 ^ 6"],
 ];
 
-export default function ReportData() {
+const ReportData = () => {
   return (
     <div className="clinic-report-list">
       <div className="report-header">
@@ -39,7 +39,7 @@ export default function ReportData() {
             className={`report-items-container ${index % 2 === 0 && "active"} `}
             key={row[3]}
           >
-            <img src={"/reportCheck.png"} alt=" select img" />
+            <img src="/reportCheck.png" alt=" select img" />
             <div className={`report-item`}>
               {row.map((column) => {
                 return <p>{column}</p>;
@@ -50,4 +50,6 @@ export default function ReportData() {
       })}
     </div>
   );
-}
+};
+
+export default ReportData;

@@ -1,18 +1,36 @@
 import React, { useState } from "react";
+import RootLayout from "../../Layouts/RootLayout";
 import List from "../HeadSetList/index";
 import "./styles.scss";
 
-export default function Auth() {
+const Auth = () => {
   const [showLogin, isShowLogin] = useState(true);
   const [navigateToList, isNavigateToList] = useState(false);
 
-  if (navigateToList) return <List />;
-  else if (showLogin) return <LoginForm isShowLogin={isShowLogin} />;
-  else return <HeadsetForm isNavigateToList={isNavigateToList} />;
-}
+  if (navigateToList)
+    return (
+      <RootLayout>
+        <List />
+      </RootLayout>
+    );
+  else if (showLogin)
+    return (
+      <RootLayout>
+        <LoginForm isShowLogin={isShowLogin} />
+      </RootLayout>
+    );
+  else
+    return (
+      <RootLayout>
+        <HeadsetForm isNavigateToList={isNavigateToList} />
+      </RootLayout>
+    );
+};
+
+export default Auth;
 
 // SHOW LOGIN FORM
-function LoginForm({ isShowLogin }) {
+const LoginForm = ({ isShowLogin }) => {
   const [formValues, setFormValues] = useState({ email: "", password: "" });
 
   const handleSubmit = (e) => {
@@ -56,10 +74,10 @@ function LoginForm({ isShowLogin }) {
       </form>
     </div>
   );
-}
+};
 
 // SHOW HEADSET FORM
-function HeadsetForm({ isNavigateToList }) {
+const HeadsetForm = ({ isNavigateToList }) => {
   const [headsetNo, setHeadsetNo] = useState("");
 
   const handleSubmit = (e) => {
@@ -86,4 +104,4 @@ function HeadsetForm({ isNavigateToList }) {
       </form>
     </div>
   );
-}
+};

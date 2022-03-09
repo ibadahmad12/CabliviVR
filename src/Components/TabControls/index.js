@@ -5,16 +5,13 @@ import "./styles.scss";
 
 let activeButtonId = 0;
 
-export default function Tab() {
+const Tab = () => {
   const navigate = useNavigate();
 
   const switchTabs = (event, index) => {
-    console.log(index);
     activeButtonId = parseInt(index);
     navigate(event);
   };
-
-  console.log(activeButtonId);
 
   return (
     <div className="tab-container">
@@ -40,4 +37,6 @@ export default function Tab() {
       </div>
     </div>
   );
-}
+};
+
+export default Tab;

@@ -1,4 +1,3 @@
-import "./App.css";
 import Auth from "./pages/Auth";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PatientReport from "./pages/PatientReport/index";
@@ -7,7 +6,7 @@ import Diagnosis from "./pages/Diagnosis/index";
 import ConsultScreen from "./pages/Consults/index";
 import OrderTest from "./pages/OrderTest/index";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -20,6 +19,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;
