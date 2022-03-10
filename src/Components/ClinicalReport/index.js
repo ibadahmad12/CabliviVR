@@ -12,15 +12,18 @@ const ClinicalReport = () => {
       <div className="clinic-info">
         <div>
           <p>Patient Name</p>
-          <p>Sex</p>
-          <p>Age</p>
-          <p>Ordering Physician</p>
-        </div>
-
-        <div>
           <p className="user-data">Jones, Gabrielle</p>
+        </div>
+        <div>
+          <p>Sex</p>
           <p className="user-data">Female</p>
+        </div>
+        <div>
+          <p>Age</p>
           <p className="user-data">34</p>
+        </div>
+        <div>
+          <p>Ordering Physician</p>
           <p className="user-data">Miller 36563267</p>
         </div>
       </div>
