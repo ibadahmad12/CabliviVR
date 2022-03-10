@@ -1,23 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Parisienne&display=swap");
+
+@import "../.././index.scss";
+
 .table-wrapper {
   max-height: 550px;
   overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media (max-width: 550px) {
+    overflow-x: auto;
+  }
 }
 
-.report-presc {
-  padding: 0 1rem 0 0;
+.notes-container {
+  margin: 2rem 0 2rem 0.5rem;
+  background-color: $skyBlue;
+  padding: 1rem;
 
-  display: block;
-  width: 95%;
-  height: auto;
-  min-height: 100px;
-  object-fit: fill;
-  object-position: center;
-  margin: 1rem 1.7rem;
+  p {
+    font-family: "Parisienne", cursive;
+    font-size: 22px;
+  }
+
+  @media (max-width: 580px) {
+    width: 98%;
+  }
 }
 
 .pres-footer {
   padding: 0 1rem 0 0rem;
-  width: 90%;
+  width: 95%;
   margin: 1rem auto;
   font-size: clamp(1rem, 1vw, 2rem);
 
