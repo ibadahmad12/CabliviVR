@@ -35,7 +35,7 @@ const Treatment = () => {
             </div>
             <div className="treatment-card active">
               <div className="content-wrapper">
-                <h4>
+                <h4 className="active-heading">
                   Cablivi <br /> + <br />
                   plasma exchange <br />+<br /> immunosupporsive therapy
                 </h4>

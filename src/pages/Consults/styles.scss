@@ -7,11 +7,10 @@
 .consultant-card {
   position: relative;
   border-radius: 15px;
-  flex: 0 1 350px;
-  height: 250px;
+  flex: 0 1 400px;
+  height: 230px;
   margin: 15px;
-  border: 2px solid black;
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(150, 147, 147);
 
   .selected-img {
     position: absolute;
@@ -24,10 +23,12 @@
 
   .person-img {
     position: absolute;
+
     border-radius: 15px;
     inset: 0;
+    top: 10px;
     width: 100%;
-    height: 100%;
+    height: 85%;
     object-fit: contain;
     object-position: top;
   }

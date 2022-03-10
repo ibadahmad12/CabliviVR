@@ -12,6 +12,10 @@ const PatientReport = () => {
         <div className="table-wrapper">
           <ClinicalReport />
           <ReportData />
+          <img src="/history.png" alt="prescription" className="report-presc" />
+          <p className="pres-footer">
+            Hypothetical patient clinical laboratory report
+          </p>
         </div>
       </TabLayout>
     </RootLayout>

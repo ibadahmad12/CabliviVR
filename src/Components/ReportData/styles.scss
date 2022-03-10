@@ -41,6 +41,10 @@
     padding: 0.35rem 0 0.1rem;
     font-size: 12px;
   }
+
+  p:nth-child(1) {
+    color: $darkBlue;
+  }
 }
 
 .active {

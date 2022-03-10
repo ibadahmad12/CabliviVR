@@ -5,16 +5,14 @@ $skyBlue: #e6f1fa;
 body {
   padding: 0 1rem;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: SiscoDemiBold;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: SiscoDemiBold;
 }
 
 /* width */
@@ -42,4 +40,11 @@ code {
   align-items: center;
   overflow: hidden;
   @content;
+}
+
+@font-face {
+  font-family: "SiscoDemiBold";
+  src: local("SiscoDemiBold"),
+    url("./fonts/SiscoDemiBold.otf") format("truetype");
+  font-weight: lighter;
 }

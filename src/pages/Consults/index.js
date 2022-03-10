@@ -15,32 +15,30 @@ const ConsultScreen = () => {
     <RootLayout>
       <TabLayout>
         <div className="consultants-wrapper">
-          {doctorsData.map(({ title, status }) => {
-            return (
-              <div className="consultant-card">
+          {doctorsData.map(({ title, status }) => (
+            <div className="consultant-card">
+              <img
+                src="/doctors.png"
+                alt="person img"
+                className="person-img"
+              ></img>
+              <div className="title-wrapper">
+                <h4>{title}</h4>
                 <img
-                  src="/doctors.png"
-                  alt="person img"
-                  className="person-img"
-                ></img>
-                <div className="title-wrapper">
-                  <h4>{title}</h4>
-                  <img
-                    src="https://icon-library.com/images/play-icon-png/play-icon-png-6.jpg"
-                    alt="play icon"
-                    className="play-img"
-                  />
-                </div>
-                {status && (
-                  <img
-                    src="/whiteCheck.png"
-                    alt=" select img"
-                    className="selected-img"
-                  />
-                )}
+                  src="https://icon-library.com/images/play-icon-png/play-icon-png-6.jpg"
+                  alt="play icon"
+                  className="play-img"
+                />
               </div>
-            );
-          })}
+              {status && (
+                <img
+                  src="/whiteCheck.png"
+                  alt=" select img"
+                  className="selected-img"
+                />
+              )}
+            </div>
+          ))}
         </div>
       </TabLayout>
     </RootLayout>

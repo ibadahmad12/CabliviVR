@@ -18,7 +18,9 @@ const OrderTest = () => {
             </div>
             <div className="order-card active">
               <div className="content-wrapper">
-                <h4>ADAMST13 Activity and Antibody</h4>
+                <h4 className="active-heading">
+                  ADAMST13 Activity and Antibody
+                </h4>
                 <img
                   src="/greenCheck.png"
                   alt="play icon"

@@ -23,17 +23,15 @@ const Tab = () => {
         </div>
       </div>
       <div className="tab-buttons-container">
-        {buttons.map(({ text, event }, index) => {
-          return (
-            <button
-              className={`${activeButtonId === index && "active"}`}
-              onClick={() => switchTabs(event, index)}
-              key={index}
-            >
-              {text}
-            </button>
-          );
-        })}
+        {buttons.map(({ text, event }, index) => (
+          <button
+            className={`${activeButtonId === index && "active"}`}
+            onClick={() => switchTabs(event, index)}
+            key={index}
+          >
+            {text}
+          </button>
+        ))}
       </div>
     </div>
   );

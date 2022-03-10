@@ -19,16 +19,18 @@ const Diagnosis = () => {
             </div>
             <div className="diagnosis-card active">
               <div className="content-wrapper">
-                <h1>aTTP/iTTP</h1>
-                <h4>
+                <h1 className="active-heading">aTTP/iTTP</h1>
+                <h4 className="active-heading">
                   Acquired immune/mediated thornbatic Activity and Antibody
                 </h4>
               </div>
             </div>
             <div className="diagnosis-card active">
               <div className="content-wrapper">
-                <h1>aHUS</h1>
-                <h4>Atypical Hermolytic Uremic Direct Antigobulin</h4>
+                <h1 className="active-heading">aHUS</h1>
+                <h4 className="active-heading">
+                  Atypical Hermolytic Uremic Direct Antigobulin
+                </h4>
               </div>
             </div>
           </div>
