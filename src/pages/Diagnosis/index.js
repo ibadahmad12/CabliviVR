@@ -14,14 +14,17 @@ const Diagnosis = () => {
             <div className="diagnosis-card">
               <div className="content-wrapper">
                 <h1>ITP</h1>
-                <h4>Immune Thronebycitopenia</h4>
+                <h4>
+                  Immune <br />
+                  Thrombocytopenia
+                </h4>
               </div>
             </div>
             <div className="diagnosis-card active">
               <div className="content-wrapper">
                 <h1 className="active-heading">aTTP/iTTP</h1>
                 <h4 className="active-heading">
-                  Acquired immune/mediated thornbatic Activity and Antibody
+                  Acquired/Immune-mediated Thrombotic Thrombocytopenic Purpura{" "}
                 </h4>
               </div>
             </div>
@@ -29,7 +32,7 @@ const Diagnosis = () => {
               <div className="content-wrapper">
                 <h1 className="active-heading">aHUS</h1>
                 <h4 className="active-heading">
-                  Atypical Hermolytic Uremic Direct Antigobulin
+                  Atypical Hemolytic <br /> Uremic Syndrome
                 </h4>
               </div>
             </div>

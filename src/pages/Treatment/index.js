@@ -18,7 +18,9 @@ const Treatment = () => {
           <div className="treatment-card-container">
             <div className="treatment-card">
               <div className="content-wrapper">
-                <h4>Wait fot ADAMST test results</h4>
+                <h4>
+                  Wait fot ADAMTS13 <br /> test results
+                </h4>
               </div>
             </div>
             <div className="treatment-card ">
@@ -29,7 +31,7 @@ const Treatment = () => {
             <div className="treatment-card ">
               <div className="content-wrapper">
                 <h4>
-                  Plasma exchange <br />+ <br /> immunosuppersive therapy{" "}
+                  Plasma exchange <br />+ <br /> immunosuppressive therapy
                 </h4>
               </div>
             </div>
@@ -37,7 +39,7 @@ const Treatment = () => {
               <div className="content-wrapper">
                 <h4 className="active-heading">
                   Cablivi <br /> + <br />
-                  plasma exchange <br />+<br /> immunosupporsive therapy
+                  plasma exchange <br />+<br /> immunosuppressive therapy
                 </h4>
               </div>
             </div>

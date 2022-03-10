@@ -17,6 +17,11 @@
     padding: 3rem 0 1rem;
     text-align: center;
     font-size: 16px;
+
+    @media (max-width: 550px) {
+      text-align: left;
+      padding-inline-start: 10px;
+    }
   }
 
   img {
@@ -38,7 +43,7 @@
   p {
     display: block;
     margin: 0;
-    width: clamp(160px, 1vw, 160px);
+    width: clamp(180px, 1vw, 180px);
     font-size: 13px;
   }
 

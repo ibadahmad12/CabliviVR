@@ -9,7 +9,7 @@ const OrderTest = () => {
       <TabLayout>
         <div className="order-wrapper">
           <h2>Order Further Tests</h2>
-          <h6>Select all test you wish to order</h6>
+          <h6>Select all tests you wish to order</h6>
           <div className="order-card-container">
             <div className="order-card">
               <div className="content-wrapper">
@@ -19,7 +19,8 @@ const OrderTest = () => {
             <div className="order-card active">
               <div className="content-wrapper">
                 <h4 className="active-heading">
-                  ADAMST13 Activity and Antibody
+                  ADAMTS13 <br /> Activity and <br />
+                  Antibody
                 </h4>
                 <img
                   src="/greenCheck.png"
@@ -30,7 +31,10 @@ const OrderTest = () => {
             </div>
             <div className="order-card">
               <div className="content-wrapper">
-                <h4>Direct Antigobulin</h4>
+                <h4>
+                  Direct
+                  <br /> Antiglobulin
+                </h4>
               </div>
             </div>
           </div>

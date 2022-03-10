@@ -5,7 +5,7 @@ const ClinicalReport = () => {
   return (
     <div className="clinical-report-wrapper">
       <div>
-        <h6>Clinical Laboratary Report </h6>
+        <h6>Clinical Laboratory Report </h6>
         <img src="/reportLogo.png" alt="logo" />
       </div>
 

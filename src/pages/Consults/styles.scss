@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .consultants-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -10,15 +12,15 @@
   flex: 0 1 400px;
   height: 230px;
   margin: 15px;
-  background-color: rgb(150, 147, 147);
+  background-color: rgb(156, 154, 154);
 
   .selected-img {
     position: absolute;
     right: 0;
     top: 0;
     margin: 5px;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
   }
 
   .person-img {
@@ -42,7 +44,7 @@
     width: 95%;
     border-radius: 6px;
     margin: 1rem auto;
-    background-color: rgb(15, 153, 123);
+    background-color: $secondary-color;
     letter-spacing: 0.05cm;
 
     .play-img {
@@ -53,7 +55,7 @@
 
     h4 {
       margin: 0;
-      padding: 10px;
+      padding: 10px 3px;
       text-align: center;
       color: white;
       font-size: 20px;
