@@ -22,7 +22,6 @@ const data = [
 
 const ReportData = () => {
   const { currentHeadSet } = useContext(HeadsetContext);
-  console.log(currentHeadSet[`report_row_${12}`]);
 
   return (
     <>

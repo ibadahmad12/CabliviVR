@@ -27,6 +27,13 @@ const OrderTest = () => {
                 >
                   Blood Smear
                 </h4>
+                {currentHeadSet?.blood_smear && (
+                  <img
+                    src="/greenCheck.png"
+                    alt="play icon"
+                    className="selection-img"
+                  />
+                )}
               </div>
             </div>
 
@@ -40,11 +47,13 @@ const OrderTest = () => {
                   ADAMTS13 <br /> Activity and <br />
                   Antibody
                 </h4>
-                <img
-                  src="/greenCheck.png"
-                  alt="play icon"
-                  className="selection-img"
-                />
+                {currentHeadSet?.adams13 && (
+                  <img
+                    src="/greenCheck.png"
+                    alt="play icon"
+                    className="selection-img"
+                  />
+                )}
               </div>
             </div>
 
@@ -62,6 +71,13 @@ const OrderTest = () => {
                   Direct
                   <br /> Antiglobulin
                 </h4>
+                {currentHeadSet?.direct_antiglobulin && (
+                  <img
+                    src="/greenCheck.png"
+                    alt="play icon"
+                    className="selection-img"
+                  />
+                )}
               </div>
             </div>
           </div>
