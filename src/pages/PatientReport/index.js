@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { HeadsetContext } from "../../Context/RootContext";
 import ClinicalReport from "../../Components/ClinicalReport";
 import ReportData from "../../Components/ReportData";
 import RootLayout from "../../Layouts/RootLayout";
@@ -6,12 +7,14 @@ import TabLayout from "../../Layouts/TabLayout";
 import "./styles.scss";
 
 const PatientReport = () => {
+  const contextData = useContext(HeadsetContext);
+
   return (
     <RootLayout>
       <TabLayout>
         <div className="table-wrapper">
-          <ClinicalReport />
-          <ReportData />
+          <ClinicalReport currentHeadSet={""} />
+          <ReportData currentHeadSet={""} />
           <DoctorsNotes />
           <p className="pres-footer">
             Hypothetical patient clinical laboratory report
