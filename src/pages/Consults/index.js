@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import RootLayout from "../../Layouts/RootLayout";
 import TabLayout from "../../Layouts/TabLayout";
+import { HeadsetContext } from "../../Context/RootContext";
+
 import "./styles.scss";
 
 const ConsultScreen = () => {
+  const { currentHeadSet } = useContext(HeadsetContext);
+
   const doctorsData = [
-    { title: "Cardiologist" },
-    { title: "Nephrologist" },
-    { title: "Neurologist", status: "active" },
-    { title: "Hematologist", status: "active" },
+    { title: "Cardiologist", status: currentHeadSet?.cardiologist },
+    { title: "Nephrologist", status: currentHeadSet?.nephrologist },
+    { title: "Neurologist", status: currentHeadSet?.neurologist },
+    { title: "Hematologist", status: currentHeadSet?.hematologist },
   ];
 
   return (
@@ -16,7 +20,7 @@ const ConsultScreen = () => {
       <TabLayout>
         <div className="consultants-wrapper">
           {doctorsData.map(({ title, status }) => (
-            <div className="consultant-card">
+            <div className="consultant-card" key={title}>
               <img
                 src="/doctors.png"
                 alt="person img"

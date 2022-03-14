@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import RootLayout from "../../Layouts/RootLayout";
-import List from "../HeadSetList/index";
+import List from "../../Components/HeadSetList/index";
+import axios from "axios";
 import "./styles.scss";
 
 const Auth = () => {
   const [showLogin, isShowLogin] = useState(true);
   const [navigateToList, isNavigateToList] = useState(false);
+  const [headsetsData, setHeadsetData] = useState([]);
 
   if (navigateToList)
     return (
       <RootLayout>
-        <List />
+        <List headsetsData={headsetsData} />
       </RootLayout>
     );
   else if (showLogin)
@@ -22,7 +24,10 @@ const Auth = () => {
   else
     return (
       <RootLayout>
-        <HeadsetForm isNavigateToList={isNavigateToList} />
+        <HeadsetForm
+          isNavigateToList={isNavigateToList}
+          setHeadsetData={setHeadsetData}
+        />
       </RootLayout>
     );
 };
@@ -31,11 +36,13 @@ export default Auth;
 
 // SHOW LOGIN FORM
 const LoginForm = ({ isShowLogin }) => {
-  const [formValues, setFormValues] = useState({ email: "", password: "" });
+  const [formValues, setFormValues] = useState({
+    email: "ibad@gmail.com",
+    password: "123456",
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
     isShowLogin(false);
   };
 
@@ -77,12 +84,13 @@ const LoginForm = ({ isShowLogin }) => {
 };
 
 // SHOW HEADSET FORM
-const HeadsetForm = ({ isNavigateToList }) => {
-  const [headsetNo, setHeadsetNo] = useState("");
+const HeadsetForm = ({ isNavigateToList, setHeadsetData }) => {
+  const [headsetNo, setHeadsetNo] = useState("testing");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(headsetNo);
+    const { data } = await axios.get(`/users/getHeadsets/${headsetNo}`);
+    setHeadsetData(data);
     isNavigateToList(true);
   };
 

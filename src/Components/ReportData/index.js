@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { HeadsetContext } from "../../Context/RootContext";
 import "./styles.scss";
 
 const data = [
@@ -20,6 +21,9 @@ const data = [
 ];
 
 const ReportData = () => {
+  const { currentHeadSet } = useContext(HeadsetContext);
+  console.log(currentHeadSet[`report_row_${12}`]);
+
   return (
     <>
       <div className="clinic-report-list">
@@ -32,27 +36,29 @@ const ReportData = () => {
         </div>
         {data.map((row, index) => (
           <div
-            className={`report-items-container ${index % 2 === 0 && "active"} `}
-            key={row[3]}
+            className={`report-items-container ${
+              currentHeadSet[`report_row_${index + 1}`] && "active"
+            } `}
+            key={index}
           >
             <img src="/reportCheck.png" alt=" select img" />
             <div className={`report-item`}>
-              {row.map((column) => {
-                return <p>{column}</p>;
+              {row.map((column, index) => {
+                return <p key={index}>{column}</p>;
               })}
             </div>
           </div>
         ))}
       </div>
-      <PregnancyTest />
-      <ViralSerologies />
+      <PregnancyTest currentHeadSet={currentHeadSet} />
+      <ViralSerologies currentHeadSet={currentHeadSet} />
     </>
   );
 };
 
 export default ReportData;
 
-const PregnancyTest = () => {
+const PregnancyTest = ({ currentHeadSet }) => {
   const pregnancyTest = [["Urine HCG", "Negative", , "-"]];
   return (
     <div className="clinic-report-list">
@@ -63,13 +69,15 @@ const PregnancyTest = () => {
       </div>
       {pregnancyTest.map((row, index) => (
         <div
-          className={`report-items-container ${index % 2 === 0 && "active"} `}
+          className={`report-items-container
+           ${currentHeadSet[`report_row_${index + 1}`] && "active"} 
+           `}
           key={row[3]}
         >
           <img src="/reportCheck.png" alt=" select img" />
           <div className={`report-item`}>
-            {row.map((column) => {
-              return <p>{column}</p>;
+            {row.map((column, index) => {
+              return <p key={index}>{column}</p>;
             })}
           </div>
         </div>
@@ -78,7 +86,7 @@ const PregnancyTest = () => {
   );
 };
 
-const ViralSerologies = () => {
+const ViralSerologies = ({ currentHeadSet }) => {
   const viralSorologies = [
     ["Hepatitis C", "Negative", "-"],
     ["Hepatitis B", "Negative", "-"],
@@ -93,13 +101,16 @@ const ViralSerologies = () => {
       </div>
       {viralSorologies.map((row, index) => (
         <div
-          className={`report-items-container ${index % 2 === 0 && "active"} `}
-          key={row[3]}
+          className={`report-items-container  ${
+            currentHeadSet[`report_row_${index + 1}`] && "active"
+          } 
+          `}
+          key={index}
         >
           <img src="/reportCheck.png" alt=" select img" />
           <div className={`report-item`}>
-            {row.map((column) => {
-              return <p>{column}</p>;
+            {row.map((column, index) => {
+              return <p key={index}>{column}</p>;
             })}
           </div>
         </div>

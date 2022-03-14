@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { HeadsetContext } from "../../Context/RootContext";
 import { buttons } from "./Buttons";
 import "./styles.scss";
 
@@ -7,6 +8,19 @@ let activeButtonId = 0;
 
 const Tab = () => {
   const navigate = useNavigate();
+  const contextData = useContext(HeadsetContext);
+
+  const getDate = () => {
+    let date = new Date(parseInt(contextData.currentHeadSet?.date) * 1000);
+    return (
+      date.getDate() + "/" + date.getMonth() + 1 + "/" + date?.getFullYear()
+    );
+  };
+
+  const getTime = () => {
+    let date = new Date(parseInt(contextData.currentHeadSet?.date) * 1000);
+    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  };
 
   const switchTabs = (event, index) => {
     activeButtonId = parseInt(index);
@@ -16,9 +30,11 @@ const Tab = () => {
   return (
     <div className="tab-container">
       <div className="user-info">
-        <h6>Session : 4/12/2022 at 14:32</h6>
+        <h6>
+          Session : {getDate()} at {getTime()}
+        </h6>
         <div className="headset-info">
-          <h5>4332</h5>
+          <h5>{contextData?.currentHeadSet?.device_serial_no.slice(-4)}</h5>
           <p>Headset Number</p>
         </div>
       </div>
