@@ -1,0 +1,80 @@
+@import "../../index.scss";
+
+.table-container {
+  @include page-containers;
+}
+
+h4 {
+  font-size: 25px;
+  margin: 0 0 1rem;
+}
+
+.table {
+  width: 50%;
+  max-height: 500px;
+  overflow: auto;
+
+  .table-row,
+  .table-heading {
+    display: flex;
+    column-gap: 0.2rem;
+    margin-block: 0.2rem;
+    justify-content: space-evenly;
+  }
+
+  .table-column {
+    display: inline-block;
+    text-align: center;
+    padding: 0.7rem;
+    width: 200px;
+    max-width: 200px;
+    font-size: 18px;
+  }
+}
+
+.table-heading .table-column {
+  font-weight: bolder;
+  background-color: $darkBlue;
+  color: white;
+}
+
+.view-btn {
+  outline: none;
+  padding: 0.5rem 2rem;
+  border: none;
+  font-size: 16px;
+  color: white;
+  background-color: $primary-color !important;
+  cursor: pointer;
+
+  @media (max-width: 1100px) {
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.table-row:nth-child(even) .table-column {
+  background-color: $skyBlue;
+}
+.table-row:nth-child(odd) .table-column {
+  background-color: rgb(202, 206, 224);
+}
+
+@media (max-width: 850px) {
+  .table {
+    width: 80%;
+  }
+}
+
+@media (max-width: 550px) {
+  .table {
+    width: 95%;
+  }
+
+  .table-column {
+    font-size: 12px !important;
+  }
+
+  .table-heading .table-column {
+    font-size: 14px;
+  }
+}

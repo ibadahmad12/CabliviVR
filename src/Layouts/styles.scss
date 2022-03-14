@@ -1,0 +1,29 @@
+.cablivi-logo {
+  position: absolute;
+  height: 120px;
+  width: 200px;
+  margin: 4rem 1rem 0;
+  top: 0;
+}
+
+.tab-layout-container {
+  width: 65%;
+  margin: 2rem auto;
+
+  @media (max-width: 1320px) {
+    width: 80%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .cablivi-logo {
+    margin-top: 2rem;
+  }
+  .tab-layout-container {
+    margin-block: 8rem;
+  }
+}

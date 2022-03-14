@@ -1,0 +1,59 @@
+@import "../../index.scss";
+
+.clinic-report-list {
+  padding: 0 0rem 0 0;
+}
+
+.report-header,
+.report-item {
+  display: flex;
+  justify-content: space-evenly;
+
+  p {
+    width: clamp(160px, 1vw, 160px);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+.report-items-container {
+  display: flex;
+  img {
+    width: 30px;
+    height: 30px;
+    visibility: hidden;
+  }
+}
+
+.report-item {
+  width: 100%;
+  background-color: $skyBlue;
+  margin: 0.1rem 0;
+
+  p {
+    margin: 0;
+    padding: 0.35rem 0 0.1rem;
+    font-size: 12px;
+  }
+
+  p:nth-child(1) {
+    color: $darkBlue;
+  }
+}
+
+.active {
+  .report-item {
+    background-color: rgb(188, 225, 240);
+  }
+
+  img {
+    align-self: center;
+    visibility: visible;
+  }
+}
