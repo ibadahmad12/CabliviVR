@@ -44,10 +44,6 @@
       width: 100%;
       border-radius: 6px;
 
-      .active-heading {
-        color: $secondary-color;
-      }
-
       h1 {
         margin: 0;
         width: 100%;
@@ -68,5 +64,11 @@
   .active {
     border: 3px solid $secondary-color;
     background-color: white;
+    .content-wrapper {
+      h4,
+      h1 {
+        color: $secondary-color;
+      }
+    }
   }
 }

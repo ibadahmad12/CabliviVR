@@ -41,13 +41,7 @@ const Treatment = () => {
               }`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${
-                    currentHeadSet?.plasma_exchnage && "active-heading"
-                  }`}
-                >
-                  Plasma Exchange
-                </h4>
+                <h4>Plasma Exchange</h4>
               </div>
             </div>
             <div
@@ -56,11 +50,7 @@ const Treatment = () => {
               }`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${
-                    currentHeadSet?.plasma_exchnage_therapi && "active-heading"
-                  }`}
-                >
+                <h4>
                   Plasma exchange <br />+ <br /> immunosuppressive therapy
                 </h4>
               </div>
@@ -71,12 +61,7 @@ const Treatment = () => {
               }`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${
-                    currentHeadSet?.plasma_exchnage_therapi_cabilivi &&
-                    "active-heading"
-                  }`}
-                >
+                <h4>
                   Cablivi <br /> + <br />
                   plasma exchange <br />+<br /> immunosuppressive therapy
                 </h4>

@@ -19,35 +19,31 @@ const Diagnosis = () => {
               className={`diagnosis-card ${currentHeadSet?.itp && "active"}`}
             >
               <div className="content-wrapper">
-                <h1 className={`${currentHeadSet?.itp && "active-heading"}`}>
-                  ITP
-                </h1>
-                <h4 className={`${currentHeadSet?.itp && "active-heading"}`}>
+                <h1>ITP</h1>
+                <h4>
                   Immune <br />
                   Thrombocytopenia
                 </h4>
               </div>
             </div>
+
             <div
               className={`diagnosis-card ${currentHeadSet?.attp && "active"}`}
             >
               <div className="content-wrapper">
-                <h1 className={`${currentHeadSet?.attp && "active-heading"}`}>
-                  aTTP/iTTP
-                </h1>
-                <h4 className={`${currentHeadSet?.attp && "active-heading"}`}>
+                <h1>aTTP/iTTP</h1>
+                <h4>
                   Acquired/Immune-mediated Thrombotic Thrombocytopenic Purpura{" "}
                 </h4>
               </div>
             </div>
+
             <div
               className={`diagnosis-card ${currentHeadSet?.ahus && "active"}`}
             >
               <div className="content-wrapper">
-                <h1 cclassName={`${currentHeadSet?.ahus && "active-heading"}`}>
-                  aHUS
-                </h1>
-                <h4 className={`${currentHeadSet?.ahus && "active-heading"}`}>
+                <h1>aHUS</h1>
+                <h4>
                   Atypical Hemolytic <br /> Uremic Syndrome
                 </h4>
               </div>
