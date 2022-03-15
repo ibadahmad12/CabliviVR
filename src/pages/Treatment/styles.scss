@@ -72,10 +72,6 @@
       margin: 0;
       border-radius: 6px;
 
-      .active-heading {
-        color: $secondary-color;
-      }
-
       h4 {
         display: flex;
         row-gap: 1rem;
@@ -95,6 +91,12 @@
   .active {
     border: 3px solid $secondary-color;
     background-color: white;
+
+    .content-wrapper {
+      h4 {
+        color: $secondary-color;
+      }
+    }
   }
 
   @media (max-width: 1160px) {

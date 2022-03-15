@@ -20,13 +20,7 @@ const OrderTest = () => {
               }`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${
-                    currentHeadSet?.blood_smear && "active-heading"
-                  }`}
-                >
-                  Blood Smear
-                </h4>
+                <h4>Blood Smear</h4>
                 {currentHeadSet?.blood_smear && (
                   <img
                     src="/greenCheck.png"
@@ -41,9 +35,7 @@ const OrderTest = () => {
               className={`order-card ${currentHeadSet?.adams13 && "active"}`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${currentHeadSet?.adams13 && "active-heading"}`}
-                >
+                <h4>
                   ADAMTS13 <br /> Activity and <br />
                   Antibody
                 </h4>
@@ -63,11 +55,7 @@ const OrderTest = () => {
               }`}
             >
               <div className="content-wrapper">
-                <h4
-                  className={`${
-                    currentHeadSet?.direct_antiglobulin && "active-heading"
-                  }`}
-                >
+                <h4>
                   Direct
                   <br /> Antiglobulin
                 </h4>

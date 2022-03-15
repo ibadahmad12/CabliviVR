@@ -57,8 +57,9 @@ const ReportData = () => {
 
 export default ReportData;
 
+const pregnancyTest = [["Urine HCG", "Negative", "-"]];
+
 const PregnancyTest = ({ currentHeadSet }) => {
-  const pregnancyTest = [["Urine HCG", "Negative", , "-"]];
   return (
     <div className="clinic-report-list">
       <div className="report-header">
@@ -85,12 +86,13 @@ const PregnancyTest = ({ currentHeadSet }) => {
   );
 };
 
+const viralSorologies = [
+  ["Hepatitis C", "Negative", "-"],
+  ["Hepatitis B", "Negative", "-"],
+  ["HIV", "Negative", "-"],
+];
+
 const ViralSerologies = ({ currentHeadSet }) => {
-  const viralSorologies = [
-    ["Hepatitis C", "Negative", "-"],
-    ["Hepatitis B", "Negative", "-"],
-    ["HIV", "Negative", "-"],
-  ];
   return (
     <div className="clinic-report-list">
       <div className="report-header">

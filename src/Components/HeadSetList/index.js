@@ -3,9 +3,9 @@ import { HeadsetContext } from "../../Context/RootContext";
 import "./styles.scss";
 import { useNavigate } from "react-router-dom";
 
-const List = ({ headsetsData }) => {
-  var heading = ["Headset", "Date", "Time", "Action"];
+const heading = ["Headset", "Date", "Time", "Action"];
 
+const List = ({ headsetsData }) => {
   return (
     <div className="table-container">
       <h4>Select Headset from List</h4>
