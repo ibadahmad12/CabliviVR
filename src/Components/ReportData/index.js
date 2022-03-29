@@ -72,7 +72,7 @@ const PregnancyTest = ({ currentHeadSet }) => {
           className={`report-items-container
            ${currentHeadSet[`report_row_${index + 1}`] && "active"} 
            `}
-          key={row[3]}
+          key={index}
         >
           <img src="/reportCheck.png" alt=" select img" />
           <div className={`report-item`}>

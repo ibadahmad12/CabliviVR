@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import RootLayout from "../../Layouts/RootLayout";
 import List from "../../Components/HeadSetList/index";
-import axios from "axios";
 import { users } from "./Users";
+import { HeadsetContext } from "../../Context/RootContext";
 import "./styles.scss";
 
 const Auth = () => {
   const [showLogin, isShowLogin] = useState(true);
   const [navigateToList, isNavigateToList] = useState(false);
-  const [headsetsData, setHeadsetData] = useState([]);
+  const { currentHeadSet } = useContext(HeadsetContext);
+  const [headsetsId, setHeadsetId] = useState(0);
 
-  if (navigateToList)
+  console.log(currentHeadSet);
+
+  if (navigateToList || currentHeadSet?.last_six_serial_no)
     return (
       <RootLayout>
-        <List headsetsData={headsetsData} />
+        <List id={headsetsId || currentHeadSet?.last_six_serial_no} />
       </RootLayout>
     );
   else if (showLogin)
@@ -27,7 +30,7 @@ const Auth = () => {
       <RootLayout>
         <HeadsetForm
           isNavigateToList={isNavigateToList}
-          setHeadsetData={setHeadsetData}
+          setHeadsetId={setHeadsetId}
         />
       </RootLayout>
     );
@@ -38,8 +41,8 @@ export default Auth;
 // SHOW LOGIN FORM
 const LoginForm = ({ isShowLogin }) => {
   const [formValues, setFormValues] = useState({
-    email: "",
-    password: "",
+    email: "guest@gmail.com",
+    password: "123456",
   });
 
   const handleSubmit = (e) => {
@@ -58,7 +61,7 @@ const LoginForm = ({ isShowLogin }) => {
   return (
     <div className="login-form-wrapper">
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-input">
           <label>Login</label>
           <input
             type="email"
@@ -69,7 +72,7 @@ const LoginForm = ({ isShowLogin }) => {
             }
           />
         </div>
-        <div>
+        <div className="form-input">
           <label>Password</label>
 
           <input
@@ -93,13 +96,11 @@ const LoginForm = ({ isShowLogin }) => {
 };
 
 // SHOW HEADSET FORM
-const HeadsetForm = ({ isNavigateToList, setHeadsetData }) => {
+const HeadsetForm = ({ isNavigateToList, setHeadsetId }) => {
   const [headsetNo, setHeadsetNo] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { data } = await axios.get(`/users/getHeadsets/${headsetNo}`);
-    setHeadsetData(data);
+  const handleSubmit = (e) => {
+    setHeadsetId(headsetNo);
     isNavigateToList(true);
   };
 
@@ -108,7 +109,7 @@ const HeadsetForm = ({ isNavigateToList, setHeadsetData }) => {
       <h4>Enter Headset Number</h4>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="6 Hexa Decimal Characters"
+          placeholder="Sticker Number"
           type="text"
           required
           value={headsetNo}
