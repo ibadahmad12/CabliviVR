@@ -2,6 +2,10 @@
 
 .table-container {
   @include page-containers;
+
+  @media (max-width: 1400px) {
+    margin-block: 8rem;
+  }
 }
 
 h4 {
@@ -25,10 +29,15 @@ h4 {
   .table-column {
     display: inline-block;
     text-align: center;
-    padding: 0.7rem;
+    padding: 0.7rem 0.2rem 0.7rem;
     width: 200px;
     max-width: 200px;
     font-size: 18px;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
   }
 }
 

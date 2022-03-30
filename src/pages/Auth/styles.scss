@@ -19,7 +19,7 @@
     display: inline-block;
     font-weight: bolder;
     font-size: 25px;
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     min-width: 120px;
     max-width: 120px;
   }
@@ -55,6 +55,10 @@
       0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
+.form-input {
+  display: flex;
+  align-items: center;
+}
 
 .headset-form-wrapper input {
   width: 300px;
@@ -65,10 +69,20 @@
 }
 
 @media (max-width: 550px) {
-  .login-form-wrapper label {
-    display: none;
-  }
   .login-form-wrapper .button-wrapper {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .login-form-wrapper label {
+    font-size: 17px;
+    min-width: 80px;
+    display: inline-block;
+  }
+
+  .form-input input,
+  .headset-form-wrapper input {
+    width: 200px;
   }
 }

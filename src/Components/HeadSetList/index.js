@@ -1,11 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { HeadsetContext } from "../../Context/RootContext";
-import "./styles.scss";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./styles.scss";
 
 const heading = ["Headset", "Date", "Time", "Action"];
 
-const List = ({ headsetsData }) => {
+const List = ({ id }) => {
+  const [headsetsData, setHeadListData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://cabilivi-backend.herokuapp.com/users/getHeadsets/${id}`)
+      .then(({ data }) => setHeadListData(data));
+  }, []);
+
   return (
     <div className="table-container">
       <h4>Select Headset from List</h4>
@@ -36,7 +45,11 @@ const TableRow = ({ data }) => {
   const getDate = (stringDate) => {
     let date = new Date(parseInt(stringDate) * 1000);
     return (
-      date.getDate() + "/" + date.getMonth() + 1 + "/" + date?.getFullYear()
+      date.getDate() +
+      "/" +
+      parseInt(date.getMonth() + 1) +
+      "/" +
+      date?.getFullYear()
     );
   };
 
@@ -59,10 +72,14 @@ const TableRow = ({ data }) => {
           key={index}
         >
           <div className={"table-column"}>
-            {val?.device_serial_no.slice(-4)}
+            <p>{val?.device_serial_no.slice(-6)}</p>
           </div>
-          <div className={"table-column"}>{getDate(val?.date)}</div>
-          <div className={"table-column"}>{getTime(val?.date)}</div>
+          <div className={"table-column"}>
+            <p>{getDate(val?.date)}</p>
+          </div>
+          <div className={"table-column"}>
+            <p>{getTime(val?.date)}</p>
+          </div>
           <div className="table-column">
             <button className="view-btn">View</button>
           </div>
