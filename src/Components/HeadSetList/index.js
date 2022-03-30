@@ -2,18 +2,20 @@ import React, { useContext, useState, useEffect } from "react";
 import { HeadsetContext } from "../../Context/RootContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { convertDateToUCT } from "../../_helpers";
 import "./styles.scss";
 
-const heading = ["Headset", "Date", "Time", "Action"];
+const heading = ["Headset", "Date", "Time (CDT)", "Action"];
 
 const List = ({ id }) => {
   const [headsetsData, setHeadListData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`https://cabilivi-backend.herokuapp.com/users/getHeadsets/${id}`)
+      .get(`/users/getHeadsets/${id}`)
       .then(({ data }) => setHeadListData(data));
-  }, []);
+  }, [id]);
 
   return (
     <div className="table-container">
@@ -32,6 +34,18 @@ const List = ({ id }) => {
           <TableRow data={headsetsData} />
         </div>
       </div>
+      <button
+        className="new-entry-btn"
+        onClick={() =>
+          navigate("/", {
+            state: {
+              headsetForm: true,
+            },
+          })
+        }
+      >
+        New Entry{" "}
+      </button>
     </div>
   );
 };
@@ -43,7 +57,8 @@ const TableRow = ({ data }) => {
   const contextData = useContext(HeadsetContext);
 
   const getDate = (stringDate) => {
-    let date = new Date(parseInt(stringDate) * 1000);
+    let date = convertDateToUCT(parseInt(stringDate));
+
     return (
       date.getDate() +
       "/" +
@@ -54,7 +69,8 @@ const TableRow = ({ data }) => {
   };
 
   const getTime = (stringDate) => {
-    let date = new Date(parseInt(stringDate) * 1000);
+    let date = convertDateToUCT(parseInt(stringDate));
+
     return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   };
 
@@ -65,7 +81,7 @@ const TableRow = ({ data }) => {
 
   return (
     <div>
-      {data.map((val, index) => (
+      {data?.map((val, index) => (
         <div
           className="table-row"
           onClick={() => storeHeadSetData(val)}
@@ -85,6 +101,7 @@ const TableRow = ({ data }) => {
           </div>
         </div>
       ))}
+      {!data.length && <h3 className="loading-text"> Loading .... </h3>}
     </div>
   );
 };

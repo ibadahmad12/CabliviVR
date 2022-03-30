@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { HeadsetContext } from "../../Context/RootContext";
 import { buttons } from "./Buttons";
 import "./styles.scss";
+import { convertDateToUCT } from "../../_helpers";
 
 let activeButtonId = 0;
 
@@ -11,12 +12,12 @@ const Tab = () => {
   const contextData = useContext(HeadsetContext);
 
   const getTime = useMemo(() => {
-    let date = new Date(parseInt(contextData.currentHeadSet?.date) * 1000);
+    let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
     return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   }, [contextData]);
 
   const getDate = useMemo(() => {
-    let date = new Date(parseInt(contextData.currentHeadSet?.date) * 1000);
+    let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
     return (
       date.getDate() +
       "/" +
@@ -35,9 +36,22 @@ const Tab = () => {
     <div className="tab-container">
       <div className="user-info">
         <div>
-          <button onClick={() => navigate("/")}>Home</button>
+          <>
+            <button onClick={() => navigate("/")}>Headset List</button>
+            <button
+              onClick={() =>
+                navigate("/", {
+                  state: {
+                    headsetForm: true,
+                  },
+                })
+              }
+            >
+              New Entry
+            </button>
+          </>
           <h6>
-            Session : {getDate} at {getTime}
+            Session : {getDate} at {getTime} (CDT)
           </h6>
         </div>
         <div className="headset-info">

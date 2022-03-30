@@ -10,12 +10,16 @@
   .header-wrapper {
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 2rem;
     color: white;
 
     h6 {
       position: relative;
+      margin-right: 50px;
+    }
+    h5 {
+      margin-left: 10px;
     }
 
     h6::before,
@@ -34,7 +38,11 @@
 
     h5::before,
     h5::after {
-      width: 140px;
+      width: 160px;
+
+      @media (max-width: 1200px) {
+        width: 140px;
+      }
     }
   }
 
@@ -99,7 +107,7 @@
     }
   }
 
-  @media (max-width: 1160px) {
+  @media (max-width: 1150px) {
     .treatment-card:nth-child(1) {
       margin-right: 10px;
     }

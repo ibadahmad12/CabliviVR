@@ -1,19 +1,32 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useLayoutEffect } from "react";
 import RootLayout from "../../Layouts/RootLayout";
 import List from "../../Components/HeadSetList/index";
 import { users } from "./Users";
 import { HeadsetContext } from "../../Context/RootContext";
+import { useLocation } from "react-router-dom";
 import "./styles.scss";
 
 const Auth = () => {
   const [showLogin, isShowLogin] = useState(true);
+  const location = useLocation();
   const [navigateToList, isNavigateToList] = useState(false);
   const { currentHeadSet } = useContext(HeadsetContext);
   const [headsetsId, setHeadsetId] = useState(0);
 
-  console.log(currentHeadSet);
+  useLayoutEffect(() => {
+    if (location?.state?.headsetForm) isNavigateToList(false);
+  }, [location?.state?.headsetForm]);
 
-  if (navigateToList || currentHeadSet?.last_six_serial_no)
+  if (location?.state?.headsetForm && !navigateToList) {
+    return (
+      <RootLayout>
+        <HeadsetForm
+          isNavigateToList={isNavigateToList}
+          setHeadsetId={setHeadsetId}
+        />
+      </RootLayout>
+    );
+  } else if (navigateToList || currentHeadSet?.last_six_serial_no)
     return (
       <RootLayout>
         <List id={headsetsId || currentHeadSet?.last_six_serial_no} />
