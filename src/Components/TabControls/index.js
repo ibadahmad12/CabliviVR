@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { HeadsetContext } from "../../Context/RootContext";
 import { buttons } from "./Buttons";
@@ -37,18 +37,16 @@ const Tab = () => {
       <div className="user-info">
         <div>
           <>
-            <button onClick={() => navigate("/")}>Headset List</button>
             <button
               onClick={() =>
-                navigate("/", {
-                  state: {
-                    headsetForm: true,
-                  },
-                })
+                navigate(
+                  "/headsets/" + contextData.currentHeadSet.last_six_serial_no
+                )
               }
             >
-              New Entry
+              Headset List
             </button>
+            <button onClick={() => navigate("/headset-form")}>New Entry</button>
           </>
           <h6>
             Session : {getDate} at {getTime} (CDT)

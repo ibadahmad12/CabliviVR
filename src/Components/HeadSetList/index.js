@@ -1,52 +1,50 @@
 import React, { useContext, useState, useEffect } from "react";
 import { HeadsetContext } from "../../Context/RootContext";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { convertDateToUCT } from "../../_helpers";
 import "./styles.scss";
+import RootLayout from "../../Layouts/RootLayout";
 
 const heading = ["Headset", "Date", "Time (CDT)", "Action"];
 
-const List = ({ id }) => {
+const List = () => {
   const [headsetsData, setHeadListData] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     axios
-      .get(`/users/getHeadsets/${id}`)
+      .get(`/users/getHeadsets/${window.location.href.split("/").pop()}`)
       .then(({ data }) => setHeadListData(data));
-  }, [id]);
+  }, []);
 
   return (
-    <div className="table-container">
-      <h4>Select Headset from List</h4>
-      <div className="table">
-        <div>
-          <div className="table-heading">
-            {heading.map((head, index) => (
-              <div className="table-column" key={index}>
-                {head}
-              </div>
-            ))}
+    <RootLayout>
+      <div className="table-container">
+        <h4>Select Headset from List</h4>
+        <div className="table">
+          <div>
+            <div className="table-heading">
+              {heading.map((head, index) => (
+                <div className="table-column" key={index}>
+                  {head}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <TableRow data={headsetsData} />
           </div>
         </div>
-        <div>
-          <TableRow data={headsetsData} />
-        </div>
+        <button
+          className="new-entry-btn"
+          onClick={() => navigate("/headset-form")}
+        >
+          New Entry
+        </button>
       </div>
-      <button
-        className="new-entry-btn"
-        onClick={() =>
-          navigate("/", {
-            state: {
-              headsetForm: true,
-            },
-          })
-        }
-      >
-        New Entry{" "}
-      </button>
-    </div>
+    </RootLayout>
   );
 };
 
