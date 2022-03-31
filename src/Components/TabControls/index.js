@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext, useMemo, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { HeadsetContext } from "../../Context/RootContext";
 import { buttons } from "./Buttons";
@@ -10,11 +10,20 @@ let activeButtonId = 0;
 const Tab = () => {
   const navigate = useNavigate();
   const contextData = useContext(HeadsetContext);
+  const [id, setId] = useState(0);
 
   const getTime = useMemo(() => {
     let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
     return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   }, [contextData]);
+
+  useEffect(() => {
+    if (window.location.href.split("/").pop() === "report") {
+      activeButtonId = 0;
+      console.log("in use effect", activeButtonId);
+      setId(Math.random());
+    }
+  }, []);
 
   const getDate = useMemo(() => {
     let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
@@ -38,6 +47,7 @@ const Tab = () => {
         <div>
           <>
             <button
+              className="control-btns"
               onClick={() =>
                 navigate(
                   "/headsets/" + contextData.currentHeadSet.last_six_serial_no
@@ -46,14 +56,19 @@ const Tab = () => {
             >
               Headset List
             </button>
-            <button onClick={() => navigate("/headset-form")}>New Entry</button>
+            <button
+              className="control-btns"
+              onClick={() => navigate("/headset-form")}
+            >
+              New Entry
+            </button>
           </>
           <h6>
             Session : {getDate} at {getTime} (CDT)
           </h6>
         </div>
         <div className="headset-info">
-          <h5>{contextData?.currentHeadSet?.device_serial_no.slice(-4)}</h5>
+          <h5>{contextData?.currentHeadSet?.device_serial_no.slice(-6)}</h5>
           <p>Headset Number</p>
         </div>
       </div>

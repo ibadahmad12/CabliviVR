@@ -7,45 +7,6 @@
   border-radius: 16px;
   background-color: rgb(102, 102, 102);
 
-  .header-wrapper {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    padding: 0 2rem;
-    color: white;
-
-    h6 {
-      position: relative;
-      margin-right: 50px;
-    }
-    h5 {
-      margin-left: 10px;
-    }
-
-    h6::before,
-    h6::after,
-    h5::before,
-    h5::after {
-      margin: 0;
-      content: "";
-      padding: 0 10px;
-      display: inline-block;
-      width: 50px;
-      height: 1px;
-      background: #ffffff;
-      margin-bottom: 3px;
-    }
-
-    h5::before,
-    h5::after {
-      width: 160px;
-
-      @media (max-width: 1200px) {
-        width: 140px;
-      }
-    }
-  }
-
   h2 {
     margin: 1rem 0 1rem;
     padding-top: 8px;
@@ -61,18 +22,95 @@
     justify-content: center;
   }
 
+  .left-treatment-cards {
+    flex: 2;
+    position: relative;
+    padding: 5rem 0 0;
+    min-width: 220px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .right-treatment-cards {
+    flex: 5;
+    padding: 5rem 0 0;
+    display: flex;
+    justify-content: center;
+    min-width: 800px;
+
+    @media (max-width: 810px) {
+      flex-wrap: wrap;
+      min-width: 600px;
+    }
+
+    @media (max-width: 610px) {
+      flex-wrap: wrap;
+      min-width: 400px;
+    }
+  }
+
+  .header-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+    color: white;
+    width: 70%;
+
+    h6::before,
+    h6::after,
+    h5::before,
+    h5::after {
+      margin: 0;
+      content: "";
+      padding: 0 0px;
+      display: inline-block;
+      width: 50px;
+      height: 1px;
+      background: #ffffff;
+      margin-bottom: 3px;
+    }
+    h5::before,
+    h5::after {
+      width: 140px;
+    }
+
+    // h5::before,
+    // h5::after {
+    //   width: 10%;
+    // }
+
+    @media (max-width: 800px) {
+      h5::before,
+      h5::after {
+        width: 70px;
+      }
+    }
+
+    @media (max-width: 610px) {
+      h5::before,
+      h5::after {
+        width: 0px;
+      }
+    }
+  }
+
   .treatment-card {
     position: relative;
     border-radius: 15px;
     flex: 0 1 190px;
     height: 130px;
-    margin: 10px 10px;
+    margin: 0rem 10px 10px;
     border: 2px solid rgb(255, 255, 255);
     background-color: rgb(63, 61, 61);
 
-    &:nth-child(1) {
-      margin-right: 50px;
-    }
+    // &:nth-child(1) {
+    //   margin-right: 50px;
+    // }
 
     .content-wrapper {
       position: absolute;
@@ -107,13 +145,9 @@
     }
   }
 
-  @media (max-width: 1150px) {
+  @media (max-width: 1160px) {
     .treatment-card:nth-child(1) {
       margin-right: 10px;
-    }
-    h6,
-    h5 {
-      display: none;
     }
   }
 }

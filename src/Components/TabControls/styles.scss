@@ -6,6 +6,8 @@
   .user-info {
     display: flex;
     justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
 
     button {
       padding: 0.5rem 1rem;
@@ -14,6 +16,15 @@
       text-align: center;
       cursor: pointer;
       margin: 5px 30px 5px 0;
+    }
+
+    .control-btns {
+      border-radius: 6px;
+      border-color: none;
+      background-color: $primary-color;
+      color: white;
+      box-shadow: 5px -6px 10px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     h6 {
@@ -41,6 +52,7 @@
 
     @media (max-width: 1400px) {
       margin-top: 10rem;
+      width: 100%;
     }
   }
 
@@ -77,10 +89,10 @@
   @media (max-width: 850px) {
     column-gap: 0.5rem;
     button {
-      padding: 0.2rem;
-      width: 80px;
-      box-shadow: none;
-      border-radius: 0px;
+      padding: 1rem 0.5rem;
+      height: auto;
+      max-width: 90px;
+      min-width: 80px;
       font-size: clamp(0.7rem, 1vw, 2rem);
       word-break: keep-all;
     }
@@ -90,7 +102,8 @@
     column-gap: 0.5rem;
     button {
       font-size: clamp(0.6rem, 1vw, 2rem);
-      width: 70px;
+      max-width: 80px;
+      min-width: 65px;
     }
   }
 
