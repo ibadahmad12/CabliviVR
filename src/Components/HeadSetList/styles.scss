@@ -1,104 +1,103 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .table-container {
-  @include page-containers;
+    @include page-containers;
 
-  @media (max-width: 1400px) {
-    margin-block: 8rem;
-  }
+    @media (max-width: 1400px) {
+        margin-block: 8rem;
+    }
 }
 
 h4 {
-  font-size: 25px;
-  margin: 0 0 1rem;
+    font-size: 25px;
+    margin: 0 0 1rem;
 }
 
 .table {
-  width: 50%;
-  max-height: 500px;
-  min-height: 500px;
-  overflow: auto;
+    width: 50%;
+    max-height: 500px;
+    min-height: 500px;
+    overflow: auto;
 
-  .table-row,
-  .table-heading {
-    display: flex;
-    column-gap: 0.2rem;
-    margin-block: 0.2rem;
-    justify-content: space-evenly;
-  }
-
-  .table-column {
-    display: inline-block;
-    text-align: center;
-    padding: 0.7rem 0.2rem 0.7rem;
-    width: 200px;
-    max-width: 200px;
-    font-size: 18px;
-    text-align: center;
-
-    p {
-      margin: 0;
+    .table-row,
+    .table-heading {
+        display: flex;
+        column-gap: 0.2rem;
+        margin-block: 0.2rem;
+        justify-content: space-evenly;
     }
-  }
+
+    .table-column {
+        display: inline-block;
+        text-align: center;
+        padding: 0.7rem 0.2rem 0.7rem;
+        width: 200px;
+        max-width: 200px;
+        font-size: 18px;
+        text-align: center;
+
+        p {
+            margin: 0;
+        }
+    }
 }
 
 .table-heading .table-column {
-  font-weight: bolder;
-  background-color: $darkBlue;
-  color: white;
+    font-weight: bolder;
+    background-color: $darkBlue;
+    color: white;
 }
 
 .loading-text {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .view-btn,
 .new-entry-btn {
-  outline: none;
-  padding: 0.5rem 2rem;
-  border: none;
-  font-size: 16px;
-  color: white;
-  background-color: $primary-color !important;
-  cursor: pointer;
+    outline: none;
+    padding: 0.5rem 2rem;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: $primary-color !important;
+    cursor: pointer;
 
-  @media (max-width: 1100px) {
-    padding: 0.2rem 0.5rem;
-  }
+    @media (max-width: 1100px) {
+        padding: 0.2rem 0.5rem;
+    }
 }
 
 .new-entry-btn {
-  margin: 2rem 0;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  box-shadow: 5px -6px 10px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 2rem 0;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    box-shadow: 5px -6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .table-row:nth-child(even) .table-column {
-  background-color: $skyBlue;
+    background-color: $skyBlue;
 }
 .table-row:nth-child(odd) .table-column {
-  background-color: rgb(202, 206, 224);
+    background-color: rgb(202, 206, 224);
 }
 
 @media (max-width: 850px) {
-  .table {
-    width: 80%;
-  }
+    .table {
+        width: 80%;
+    }
 }
 
 @media (max-width: 550px) {
-  .table {
-    width: 95%;
-  }
+    .table {
+        width: 95%;
+    }
 
-  .table-column {
-    font-size: 12px !important;
-  }
+    .table-column {
+        font-size: 12px !important;
+    }
 
-  .table-heading .table-column {
-    font-size: 14px;
-  }
+    .table-heading .table-column {
+        font-size: 14px;
+    }
 }
