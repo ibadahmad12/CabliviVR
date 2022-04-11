@@ -6,8 +6,8 @@ import './styles.scss';
 
 const Auth = () => {
     const [formValues, setFormValues] = useState({
-        email: '',
-        password: '',
+        email: 'CabliviVR',
+        password: 'Cablivi12&',
     });
     const navigate = useNavigate();
 
@@ -26,12 +26,22 @@ const Auth = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="form-input">
                         <label>Login</label>
-                        <input type="email" required value={formValues.email} onChange={(e) => setFormValues({ ...formValues, email: e.target.value })} />
+                        <input
+                            type="text"
+                            required
+                            value={formValues.email}
+                            onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
+                        />
                     </div>
                     <div className="form-input">
                         <label>Password</label>
 
-                        <input type="password" required value={formValues.password} onChange={(e) => setFormValues({ ...formValues, password: e.target.value })} />
+                        <input
+                            type="password"
+                            required
+                            value={formValues.password}
+                            onChange={(e) => setFormValues({ ...formValues, password: e.target.value })}
+                        />
                     </div>
 
                     <div className="button-wrapper">

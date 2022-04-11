@@ -6,14 +6,16 @@ import { convertDateToUCT } from '../../_helpers';
 import RootLayout from '../../Layouts/RootLayout';
 import './styles.scss';
 
-const heading = ['Headset', 'Date', 'Time (CDT)', 'Action'];
+const heading = ['Headset', 'Date', 'Time (Local)', 'Action'];
 
 const List = () => {
     const [headsetsData, setHeadListData] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://cabilivi-backend.herokuapp.com/users/getHeadsets/${window.location.href.split('/').pop()}`).then(({ data }) => setHeadListData(data));
+        axios
+            .get(`https://cabilivi-backend.herokuapp.com/users/getHeadsets/${window.location.href.split('/').pop()}`)
+            .then(({ data }) => setHeadListData(data));
     }, []);
 
     return (
@@ -31,7 +33,7 @@ const List = () => {
                         </div>
                     </div>
                     <div>
-                        <TableRow data={headsetsData} />
+                        <TableRow data={[].concat(headsetsData).reverse()} />
                     </div>
                 </div>
                 <button className="new-entry-btn" onClick={() => navigate('/headset-form')}>
@@ -48,19 +50,25 @@ const TableRow = ({ data }) => {
     const navigate = useNavigate();
     const contextData = useContext(HeadsetContext);
 
-    const getDate = (stringDate) => {
+    var getDate = (stringDate) => {
         let date = convertDateToUCT(parseInt(stringDate));
 
-        return date.getDate() + '/' + parseInt(date.getMonth() + 1) + '/' + date?.getFullYear();
+        return date?.split(' ')[0];
     };
 
     const getTime = (stringDate) => {
-        let date = convertDateToUCT(parseInt(stringDate));
+        let date = convertDateToUCT(parseInt(stringDate)).split(' ')[1];
 
-        var suffix = date.getHours() >= 12 ? 'PM' : 'AM';
-        var hours = ((date.getHours() + 11) % 12) + 1;
+        var suffix = date.slice(0, 2) >= 12 ? 'PM' : 'AM';
+        var hours = ((parseInt(date.slice(0, 2)) + 11) % 12) + 1;
 
-        return hours + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + suffix;
+        // return convertToHHMMSS(hours) + ':' + convertToHHMMSS(date.getMinutes()) + ':' + convertToHHMMSS(date.getSeconds()) + ' ' + suffix;
+
+        return convertToHHMMSS(hours) + date.slice(2) + ' ' + suffix;
+    };
+
+    const convertToHHMMSS = (val) => {
+        return val < 10 ? '0' + val : val;
     };
 
     const storeHeadSetData = (data) => {

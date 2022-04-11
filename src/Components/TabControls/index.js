@@ -12,11 +12,19 @@ const Tab = () => {
     const contextData = useContext(HeadsetContext);
     const [id, setId] = useState(0);
 
+    const convertToHHMMSS = (val) => {
+        return val < 10 ? '0' + val : val;
+    };
+
     const getTime = useMemo(() => {
-        let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
-        var suffix = date.getHours() >= 12 ? 'PM' : 'AM';
-        var hours = ((date.getHours() + 11) % 12) + 1;
-        return hours + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + suffix;
+        let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date)).split(' ')[1];
+
+        var suffix = date.slice(0, 2) >= 12 ? 'PM' : 'AM';
+        var hours = ((parseInt(date.slice(0, 2)) + 11) % 12) + 1;
+
+        // return convertToHHMMSS(hours) + ':' + convertToHHMMSS(date.getMinutes()) + ':' + convertToHHMMSS(date.getSeconds()) + ' ' + suffix;
+
+        return convertToHHMMSS(hours) + date.slice(2) + ' ' + suffix;
     }, [contextData]);
 
     useEffect(() => {
@@ -28,7 +36,8 @@ const Tab = () => {
 
     const getDate = useMemo(() => {
         let date = convertDateToUCT(parseInt(contextData.currentHeadSet?.date));
-        return date.getDate() + '/' + parseInt(date.getMonth() + 1) + '/' + date.getFullYear();
+
+        return date?.split(' ')[0];
     }, [contextData]);
 
     const switchTabs = (event, index) => {
@@ -49,7 +58,7 @@ const Tab = () => {
                         </button>
                     </>
                     <h6>
-                        Session : {getDate} at {getTime} (CDT)
+                        Session : {getDate} at {getTime} (local)
                     </h6>
                 </div>
                 <div className="headset-info">

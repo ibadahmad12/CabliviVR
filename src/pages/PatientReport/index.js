@@ -24,12 +24,8 @@ const DoctorsNotes = () => {
     return (
         <div className="notes-container">
             <h4>NOTES</h4>
-            <p>Not taking any meds</p>
-            <p>No history of transplant, illness, cancer, hypertension, </p>
-            <p>
-                No family history of serious illness; diabetes in uncle;
-                <br /> grandfather died of heart attack
-            </p>
+            <p>Not taking any meds. No history of transplant, illness, cancer, hypertension, </p>
+            <p>No family history of serious illness; diabetes in uncle; grandfather died of heart attack</p>
         </div>
     );
 };
