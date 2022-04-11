@@ -18,7 +18,14 @@ function HeadsetForm() {
             <div className="headset-form-wrapper">
                 <h4>Enter Headset Number</h4>
                 <form onSubmit={handleSubmit}>
-                    <input placeholder="Sticker Number" type="text" required value={headsetNo} pattern="[A-Za-z0-9]{6}" onChange={(e) => setHeadsetNo(e.target.value)} />
+                    <input
+                        placeholder="Sticker Number"
+                        type="text"
+                        required
+                        value={headsetNo}
+                        pattern="[A-Za-z0-9]{6}"
+                        onChange={(e) => setHeadsetNo(e.target.value)}
+                    />
                     <div className="button-wrapper">
                         <button type="submit" className="headset-search-btn">
                             Search

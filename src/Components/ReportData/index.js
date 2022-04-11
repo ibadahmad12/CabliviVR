@@ -64,8 +64,7 @@ const PregnancyTest = ({ currentHeadSet }) => {
             </div>
             {pregnancyTest.map((row, index) => (
                 <div
-                    className={`report-items-container
-           ${currentHeadSet[`report_row_${index + 16}`] && 'active'} 
+                    className={`report-items-container ${currentHeadSet[`report_row_${index + 16}`] && 'active'} 
            `}
                     key={index}
                 >
@@ -97,7 +96,7 @@ const ViralSerologies = ({ currentHeadSet }) => {
             </div>
             {viralSorologies.map((row, index) => (
                 <div
-                    className={`report-items-container  ${currentHeadSet[`report_row_${index + 16}`] && 'active'} 
+                    className={`report-items-container ${currentHeadSet[`report_row_${index + 16}`] && 'active'} 
           `}
                     key={index}
                 >

@@ -9,6 +9,8 @@ import RootContext from './Context/RootContext';
 import HeadsetForm from './Components/HeadsetForm';
 import List from './Components/HeadSetList/index';
 
+console.log(Intl.DateTimeFormat().resolvedOptions().timeZone);
+
 const App = () => {
     return (
         <RootContext>
