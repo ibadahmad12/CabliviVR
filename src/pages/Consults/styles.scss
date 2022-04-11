@@ -1,64 +1,64 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .consultants-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .consultant-card {
-  position: relative;
-  border-radius: 15px;
-  flex: 0 1 400px;
-  height: 230px;
-  margin: 15px;
-  background-color: rgb(156, 154, 154);
-
-  .selected-img {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 5px;
-    height: 45px;
-    width: 45px;
-  }
-
-  .person-img {
-    position: absolute;
+    position: relative;
     border-radius: 15px;
-    inset: 0;
-    top: 10px;
-    width: 100%;
-    height: 85%;
-    object-fit: contain;
-    object-position: top;
-  }
+    flex: 0 1 400px;
+    height: 230px;
+    margin: 15px;
+    background-color: rgb(156, 154, 154);
 
-  .title-wrapper {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 95%;
-    border-radius: 6px;
-    margin: 1rem auto;
-    background-color: $secondary-color;
-    letter-spacing: 0.05cm;
-
-    .play-img {
-      width: 30px;
-      height: 30px;
-      align-self: center;
+    .selected-img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 5px;
+        height: 45px;
+        width: 45px;
     }
 
-    h4 {
-      margin: 0;
-      padding: 10px 3px;
-      text-align: center;
-      color: white;
-      font-size: 20px;
+    .person-img {
+        position: absolute;
+        border-radius: 15px;
+        inset: 0;
+        top: 10px;
+        width: 100%;
+        height: 85%;
+        object-fit: contain;
+        object-position: top;
     }
-  }
+
+    .title-wrapper {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 95%;
+        border-radius: 6px;
+        margin: 1rem auto;
+        background-color: $secondary-color;
+        letter-spacing: 0.05cm;
+
+        .play-img {
+            width: 30px;
+            height: 30px;
+            align-self: center;
+        }
+
+        h4 {
+            margin: 0;
+            padding: 10px 3px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+        }
+    }
 }

@@ -1,66 +1,66 @@
-@import "../../index.scss";
+@import '../../index.scss';
 
 .clinical-report-wrapper {
-  margin: 0;
-  background-color: $skyBlue;
-  padding: 0 0 2rem;
-  height: auto;
-  width: 100%;
-  position: relative;
-
-  @media (max-width: 550px) {
-    width: 108%;
-  }
-
-  h6 {
-    color: $darkBlue;
-    padding: 3rem 0 1rem;
-    text-align: center;
-    font-size: 16px;
+    margin: 0;
+    background-color: $skyBlue;
+    padding: 0 0 2rem;
+    height: auto;
+    width: 100%;
+    position: relative;
 
     @media (max-width: 550px) {
-      text-align: left;
-      padding-inline-start: 10px;
+        width: 108%;
     }
-  }
 
-  img {
-    position: absolute;
-    width: 60px;
-    height: auto;
-    top: 0;
-    right: 0;
-    padding: 2rem 2rem 0;
-  }
+    h6 {
+        color: $darkBlue;
+        padding: 3rem 0 1rem;
+        text-align: center;
+        font-size: 16px;
+
+        @media (max-width: 550px) {
+            text-align: left;
+            padding-inline-start: 10px;
+        }
+    }
+
+    img {
+        position: absolute;
+        width: 60px;
+        height: auto;
+        top: 0;
+        right: 0;
+        padding: 2rem 2rem 0;
+    }
 }
 
 .clinic-info {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 
-  p {
-    display: block;
-    margin: 0;
-    width: clamp(180px, 1vw, 180px);
-    font-size: 13px;
-  }
-
-  .user-data {
-    margin-top: 0.2rem;
-    display: inline-block;
-    padding: 0.3rem 0.2rem;
-    background-color: white;
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 900px) {
     p {
-      width: clamp(100px, 1vw, 100px);
+        display: block;
+        margin: 0;
+        width: clamp(180px, 1vw, 180px);
+        font-size: 13px;
     }
+
     .user-data {
-      background-color: transparent;
+        margin-top: 0.2rem;
+        display: inline-block;
+        padding: 0.3rem 0.2rem;
+        background-color: white;
+        text-transform: uppercase;
     }
-  }
+
+    @media (max-width: 900px) {
+        p {
+            width: clamp(100px, 1vw, 100px);
+        }
+        .user-data {
+            background-color: transparent;
+        }
+    }
 }
